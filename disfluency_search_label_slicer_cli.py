@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 
+# P - prolongation
+# R - repetition
+# B - block
+# N - normal
+
 import sys
 import os
 import argparse
@@ -85,6 +90,7 @@ for labeled_files in found_labeled_files_list:
                     txt_label_file_path=label_file_path,
                     output_folder_path=args.OUTPUT_FOLDER_PATH + "/repetition",
                     output_file_length_seconds=args.SLICE_SIZE,
+                    output_file_prefix=files_prefix,
                     label_value_filer={"R"})
     slicer.export_all()
 
@@ -92,6 +98,7 @@ for labeled_files in found_labeled_files_list:
                     txt_label_file_path=label_file_path,
                     output_folder_path=args.OUTPUT_FOLDER_PATH + "/block",
                     output_file_length_seconds=args.SLICE_SIZE,
+                    output_file_prefix=files_prefix,
                     label_value_filer={"B"})
     slicer.export_all()
 
@@ -99,6 +106,7 @@ for labeled_files in found_labeled_files_list:
                     txt_label_file_path=label_file_path,
                     output_folder_path=args.OUTPUT_FOLDER_PATH + "/normal",
                     output_file_length_seconds=args.SLICE_SIZE,
+                    output_file_prefix=files_prefix,
                     label_value_filer={"N"})
     slicer.export_all()
 
