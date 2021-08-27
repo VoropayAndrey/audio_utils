@@ -167,5 +167,5 @@ coverage.xml
 docs/_build/
 =======
 RR/
-data/output/
+data/output/*
 >>>>>>> f7a086195c2fe86db5e18843114179e257ede245
