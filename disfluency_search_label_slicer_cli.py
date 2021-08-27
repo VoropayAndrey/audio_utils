@@ -95,4 +95,11 @@ for labeled_files in found_labeled_files_list:
                     label_value_filer={"B"})
     slicer.export_all()
 
+    slicer = Slicer(audio_file_path=audio_file_path,
+                    txt_label_file_path=label_file_path,
+                    output_folder_path=args.OUTPUT_FOLDER_PATH + "/normal",
+                    output_file_length_seconds=args.SLICE_SIZE,
+                    label_value_filer={"N"})
+    slicer.export_all()
+
 print("Searching and slicing is done!")
