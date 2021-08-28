@@ -14,3 +14,19 @@ labels = self.label_reader.get_labels_seconds(limit_to_audio_length=True)
 
 Read all labels in samples:                                            
 labels = self.label_reader.get_labels_seconds(limit_to_audio_length=True)
+
+
+Make an Audacity project and add some lables Command + B:
+![](images/Audacity.png)
+
+Export lables .txt file with *Lables.txt suffix:
+![](images/ExportLabels.png)
+
+Export audio .wav file file same name without 'Lables' suffix:
+![](images/ExportLabels.png)
+
+Run audacity_label_slicer_cli.py or disfluency_search_label_slicer_cli.py to extract audio slices.
+
+Have nice labeling!
+
+
