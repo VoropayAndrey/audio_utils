@@ -1,4 +1,4 @@
-Slice any audio file by Audacity labels:
+Slice any audio file by Audacity labels:\
 audacity_label_slicer_cli.py data/Reference.wav data/ReferenceLables.txt data/output --slice_size 2
 
 
