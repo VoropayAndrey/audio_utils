@@ -5,6 +5,11 @@ import os
 
 
 class AudacityLabelReader(I.LabelReaderInterface):
+    """
+    Label reader for Audacity label format
+    More information about Audacity labels:
+    https://manual.audacityteam.org/man/creating_and_selecting_labels.html
+    """
 
     def __init__(self, txt_label_file_path=None, audio_file_path=None):
         self.txt_label_file_path = txt_label_file_path
@@ -32,7 +37,13 @@ class AudacityLabelReader(I.LabelReaderInterface):
         elif self.audio_file_path is not None:
             raise FileNotFoundError
 
-    def get_labels_seconds(self, limit_to_audio_length=False) -> dict:
+
+    def get_labels_seconds(self, limit_to_audio_length=False) -> list:
+        """
+        Return list of dict Audacity labels ["start":0, "end":2, "value:":'P' "low": 0, "high":0]
+        Optional keyword arguments:
+        limit_to_audio_length:  If True labels with samples bigger than audio file length won't be exported.
+        """
         labels_seconds_list = list()
         for label in self.labels:
             label_length = len(label)
@@ -53,7 +64,13 @@ class AudacityLabelReader(I.LabelReaderInterface):
                                    I.LABEL_READER_INTERFACE_HIGH_FREQUENCY_OF_LABEL_SECONDS: high_frequency})
         return labels_seconds_list
 
-    def get_labels_samples(self, limit_to_audio_length=False) -> dict:
+
+    def get_labels_samples(self, limit_to_audio_length=False) -> list:
+        """
+        Return list of dict Audacity labels ["start":0, "end":2, "value:":'P' "low": 0, "high":0]
+        Optional keyword arguments:
+        limit_to_audio_length:  If True labels with samples bigger than audio file length won't be exported.
+        """
         labels_samples_list = list()
         seconds_per_sample = 1/self.audio_sample_rate
         for label in self.labels:
