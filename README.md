@@ -23,7 +23,7 @@ Export lables .txt file with *Lables.txt suffix:
 ![](images/ExportLabels.png)
 
 Export audio .wav file file same name without 'Lables' suffix:
-![](images/ExportLabels.png)
+![](images/ExportWav.png)
 
 Run audacity_label_slicer_cli.py or disfluency_search_label_slicer_cli.py to extract audio slices.
 
